@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from __future__ import print_function
 import numpy as np
 import random
 
@@ -40,11 +40,20 @@ def forward_backward_prop(X, labels, params, dimensions):
 
     # Note: compute cost based on `sum` not `mean`.
     ### YOUR CODE HERE: forward propagation
-    raise NotImplementedError
+    z1 = np.dot(X,W1)+b1
+    s1 = sigmoid(z1)
+    z2 = np.dot(s1,W2)+b2
+    predictions = softmax(z2)
+    cost = np.sum(-np.sum(np.multiply(np.log(predictions),labels),axis=1))
     ### END YOUR CODE
-
     ### YOUR CODE HERE: backward propagation
-    raise NotImplementedError
+    cost_grad = predictions - labels
+    gradW2 = np.dot(s1.transpose(),cost_grad)
+    gradb2 = np.sum(cost_grad,axis=0).reshape(1,Dy)
+    s1_grad = np.dot(cost_grad,W2.transpose())
+    z1_grad = np.multiply(s1_grad,sigmoid_grad(s1))
+    gradW1 = np.dot(X.transpose(),z1_grad)
+    gradb1 = np.sum(z1_grad,axis=0).reshape(1,H)
     ### END YOUR CODE
 
     ### Stack gradients (do not modify)
@@ -59,18 +68,17 @@ def sanity_check():
     Set up fake data and parameters for the neural network, and test using
     gradcheck.
     """
-    print "Running sanity check..."
+    print ("Running sanity check...")
 
     N = 20
     dimensions = [10, 5, 10]
     data = np.random.randn(N, dimensions[0])   # each row will be a datum
     labels = np.zeros((N, dimensions[2]))
-    for i in xrange(N):
+    for i in range(N):
         labels[i, random.randint(0,dimensions[2]-1)] = 1
 
     params = np.random.randn((dimensions[0] + 1) * dimensions[1] + (
         dimensions[1] + 1) * dimensions[2], )
-
     gradcheck_naive(lambda params:
         forward_backward_prop(data, labels, params, dimensions), params)
 
@@ -82,9 +90,31 @@ def your_sanity_checks():
     This function will not be called by the autograder, nor will
     your additional tests be graded.
     """
-    print "Running your sanity checks..."
+    print ("Running your sanity checks...")
     ### YOUR CODE HERE
-    raise NotImplementedError
+    N = 2
+    dimensions = [7, 5, 4]
+    data = np.random.randn(N, dimensions[0])   # each row will be a datum
+    labels = np.zeros((N, dimensions[2]))
+    for i in range(N):
+        labels[i, random.randint(0,dimensions[2]-1)] = 1
+
+    params = np.random.randn((dimensions[0] + 1) * dimensions[1] + (
+        dimensions[1] + 1) * dimensions[2], )
+    gradcheck_naive(lambda params:
+        forward_backward_prop(data, labels, params, dimensions), params)
+
+    N = 60
+    dimensions = [7, 1, 4]
+    data = np.random.randn(N, dimensions[0])   # each row will be a datum
+    labels = np.zeros((N, dimensions[2]))
+    for i in range(N):
+        labels[i, random.randint(0,dimensions[2]-1)] = 1
+
+    params = np.random.randn((dimensions[0] + 1) * dimensions[1] + (
+        dimensions[1] + 1) * dimensions[2], )
+    gradcheck_naive(lambda params:
+        forward_backward_prop(data, labels, params, dimensions), params)
     ### END YOUR CODE
 
 
