@@ -44,7 +44,7 @@ def forward_backward_prop(X, labels, params, dimensions):
     s1 = sigmoid(z1)
     z2 = np.dot(s1,W2)+b2
     predictions = softmax(z2)
-    cost = np.sum(-np.sum(np.multiply(np.log(predictions),labels),axis=1))
+    cost = -np.sum(np.multiply(np.log(predictions),labels))
     ### END YOUR CODE
     ### YOUR CODE HERE: backward propagation
     cost_grad = predictions - labels
