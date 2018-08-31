@@ -135,7 +135,21 @@ def your_sanity_checks():
     """
     print "Running your sanity checks..."
     ### YOUR CODE HERE
-    raise NotImplementedError
+    quad = lambda x: (np.sum(x ** 3), 3 * (x ** 2))
+
+    t1 = sgd(quad, 0.5, 0.01, 1000, PRINT_EVERY=100)
+    print "test 1 result:", t1
+    assert abs(t1) <= 1e-1
+
+    t2 = sgd(quad, 0.0, 0.01, 1000, PRINT_EVERY=100)
+    print "test 2 result:", t2
+    assert abs(t2) <= 1e-6
+
+    t3 = sgd(quad, 1.0, 0.01, 1000, PRINT_EVERY=100)
+    print "test 3 result:", t3
+    assert abs(t3) <= 1e-1
+    
+    print ""
     ### END YOUR CODE
 
 

@@ -12,7 +12,7 @@
     ```
 4. activate your environment using (add source before activate if you're working with Linux/Mac)
     ```sh
-    $ activate cs231n
+    $ activate cs224n
     ```
 5. install the dependencies using requirements.txt
     ```sh
