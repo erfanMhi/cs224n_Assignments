@@ -53,6 +53,17 @@ Steps for training Word2vec in assignment 1 :
     ```sh
     $ python q3_run.py
     ```
+#### Sentiment Analysis(before you running this section you should download datasets as i mentioned in Word2vec section)
+1. If you want to use logistic regression classifier on word vectors that we trained in Word2vec section you can use this code :
+    ```sh
+    $ cd path/to/assignment1
+    $ python q4_sentiment.py --yourvectors
+    ```
+2. If you want to use pretrained GLOVE model you can use this code :
+    ```sh
+    $ cd path/to/assignment1
+    $ python q4_sentiment.py --pretrained
+    ```
 ## Results
 
 ### Assignment 1 
@@ -62,6 +73,10 @@ Steps for training Word2vec in assignment 1 :
 ![images](assignment1/imgs/q4_reg_v_acc.png)
 ### Sentiment analysis truth table 
 ![images](assignment1/imgs/q4_dev_conf.png)
+
+
+
+
 ## Built With
 
 * [Numpy](http://www.numpy.org/) - A library for doing optimized matrix operations
