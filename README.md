@@ -49,9 +49,9 @@ Give an example
 Steps for training Word2vec in assignment 1 :
 1. Go to folder /assignment 1
 2. Run get_datasets.sh(By running this file you can download datasets)
-3. Open a terminal and write : 
+3. Open a terminal and write(Be careful, for this assignment you should have installed python2.7) : 
     ```sh
-    $ cd \path\to\assignment1
+    $ python q3_run.py
     ```
     
 ## Built With
