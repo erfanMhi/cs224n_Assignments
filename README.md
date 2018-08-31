@@ -47,8 +47,12 @@ Give an example
 
 #### Word2vec
 Steps for training Word2vec in assignment 1 :
-    1. Run get_datasets.sh(By running this file you can download datasets)
-    2. Open a terminal and write : python q3_run.py
+1. Go to folder /assignment 1
+2. Run get_datasets.sh(By running this file you can download datasets)
+3. Open a terminal and write : 
+    ```sh
+    $ cd \path\to\assignment1
+    ```
     
 ## Built With
 
@@ -63,9 +67,9 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
 
-## Authors
+<!-- ## Authors
 
-* **Erfan Miahi** - *Initial work* - [PurpleBooth](https://github.com/erfanMhi)
+* **Erfan Miahi** - *Initial work* - [PurpleBooth](https://github.com/erfanMhi) -->
 
 <!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
 
