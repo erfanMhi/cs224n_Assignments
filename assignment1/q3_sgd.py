@@ -60,7 +60,6 @@ def sgd(f, x0, step, iterations, postprocessing=None, useSaved=False,
 
     # Anneal learning rate every several iterations
     ANNEAL_EVERY = 20000
-
     if useSaved:
         start_iter, oldx, state = load_saved_params()
         if start_iter > 0:
@@ -85,7 +84,11 @@ def sgd(f, x0, step, iterations, postprocessing=None, useSaved=False,
 
         cost = None
         ### YOUR CODE HERE
-        raise NotImplementedError
+        cost, grad = f(x)
+        
+        x -= step * grad
+        x = postprocessing(x)
+
         ### END YOUR CODE
 
         if iter % PRINT_EVERY == 0:

@@ -222,8 +222,6 @@ def word2vec_sgd_wrapper(word2vecModel, tokens, wordVectors, dataset, C,
     for i in range(batchsize):
         C1 = random.randint(1,C)
         centerword, context = dataset.getRandomContext(C1)
-        # print('dataset.getRandomContext(C1)',dataset.getRandomContext(C1))
-        # print('--------------------------------------batchsize-------------------------------',i)
         
         if word2vecModel == skipgram:
             denom = 1
