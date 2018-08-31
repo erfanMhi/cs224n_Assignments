@@ -31,13 +31,13 @@ def softmax(x):
     if len(x.shape) > 1:
         # Matrix
         ### YOUR CODE HERE
-        x_exp = np.exp(x - np.mean(x,axis=1).reshape(-1,1))
+        x_exp = np.exp(x - np.max(x,axis=1).reshape(-1,1))
         x = x_exp / np.sum(x_exp,axis=1).reshape(-1,1)
         ### END YOUR CODE
     else:
         # Vector
         ### YOUR CODE HERE
-        x_exp = np.exp(x - np.mean(x))
+        x_exp = np.exp(x - np.max(x))
         x = x_exp / np.sum(x_exp)
         ### END YOUR CODE
 
