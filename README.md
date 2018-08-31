@@ -58,7 +58,8 @@ Steps for training Word2vec in assignment 1 :
 
 * [Numpy](http://www.numpy.org/) - A library for doing optimized matrix operations
 * [Matplotlib](https://matplotlib.org/) - A library for visulizing our outputs as graphs
-
+* [scipy](https://www.scipy.org/) - A Library for doing mathematic, science and engineering stuff.
+* [sklearn](http://scikit-learn.org/stable/) - Simple and efficient Library for data mining and data analysis
 <!-- ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
