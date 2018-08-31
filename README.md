@@ -53,7 +53,15 @@ Steps for training Word2vec in assignment 1 :
     ```sh
     $ python q3_run.py
     ```
-    
+## Results
+
+### Assignment 1 
+#### Word2vec
+![images](assignment1/imgs/q3_word_vectors.png)
+### Sentiment analysis train/dev accuracy 
+![images](assignment1/imgs/q4_reg_v_acc.png)
+### Sentiment analysis truth table 
+![images](assignment1/imgs/q4_dev_conf.png)
 ## Built With
 
 * [Numpy](http://www.numpy.org/) - A library for doing optimized matrix operations
