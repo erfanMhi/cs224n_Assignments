@@ -106,3 +106,4 @@ venv.bak/
 # dataset
 datasets
 *.npy
+data
