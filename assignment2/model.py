@@ -16,6 +16,7 @@ class Model(object):
         See for more information:
         https://www.tensorflow.org/versions/r0.7/api_docs/python/io_ops.html#placeholders
         """
+        
         raise NotImplementedError("Each Model must re-implement this method.")
 
     def create_feed_dict(self, inputs_batch, labels_batch=None):

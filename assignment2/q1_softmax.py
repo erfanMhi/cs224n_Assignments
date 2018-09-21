@@ -54,8 +54,9 @@ def cross_entropy_loss(y, yhat):
         out:  tf.Tensor with shape (1,) (Scalar output). You need to construct this
                     tensor in the problem.
     """
-
+    
     ### YOUR CODE HERE
+    out = -tf.reduce_sum(tf.to_float(y)*tf.log(yhat))
     ### END YOUR CODE
 
     return out
